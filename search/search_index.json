@@ -1,1 +1,1 @@
-{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[]}
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Welcome to NASA LET Docs","text":""},{"location":"readall/","title":"readall.py","text":""},{"location":"setupDAQ/","title":"setupDAQ.py","text":""}]}
