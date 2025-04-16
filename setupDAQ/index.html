@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -53,7 +56,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,9 +82,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="NASA LET Test Bed" class="md-header__button md-logo" aria-label="NASA LET Test Bed" data-md-component="logo">
       
@@ -105,8 +111,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -160,6 +166,150 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../readall/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  readall.py
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  setupDAQ.py
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pyvisaTest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  pyvisaTest.py
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../socket_comms/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  socket communication
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../calculations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  calculations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../hardware/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  hardware classes
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -173,8 +323,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="NASA LET Test Bed" class="md-nav__button md-logo" aria-label="NASA LET Test Bed" data-md-component="logo">
       
@@ -385,45 +537,45 @@
 
 
 
-<h1 id="setupdaqpy">setupDAQ.py</h1>
+<h1 id="setupdaqpy">setupDAQ.py<a class="headerlink" href="#setupdaqpy" title="Permanent link">&para;</a></h1>
 <p>This script initializes and configures a DAQ (Data Acquisition) task using 
 NI-DAQmx in Python.</p>
 <p>```python</p>
-<h1 id="_1">============================================</h1>
-<h1 id="1-channel-configuration">1. Channel Configuration</h1>
-<h1 id="_2">============================================</h1>
-<h1 id="adds-a-voltage-input-channel-ai0-to-the-task-with-a-10v-range">Adds a voltage input channel (AI0) to the task with a ±10V range.</h1>
-<h1 id="this-is-where-we-tell-the-daq-which-physical-channel-to-read-from">This is where we tell the DAQ which physical channel to read from.</h1>
+<h1 id="_1">============================================<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="1-channel-configuration">1. Channel Configuration<a class="headerlink" href="#1-channel-configuration" title="Permanent link">&para;</a></h1>
+<h1 id="_2">============================================<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="adds-a-voltage-input-channel-ai0-to-the-task-with-a-10v-range">Adds a voltage input channel (AI0) to the task with a ±10V range.<a class="headerlink" href="#adds-a-voltage-input-channel-ai0-to-the-task-with-a-10v-range" title="Permanent link">&para;</a></h1>
+<h1 id="this-is-where-we-tell-the-daq-which-physical-channel-to-read-from">This is where we tell the DAQ which physical channel to read from.<a class="headerlink" href="#this-is-where-we-tell-the-daq-which-physical-channel-to-read-from" title="Permanent link">&para;</a></h1>
 <p>task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
 max_val=10.0)</p>
-<h1 id="_3">============================================</h1>
-<h1 id="2-clock-sampling-rate">2. Clock &amp; Sampling Rate</h1>
-<h1 id="_4">============================================</h1>
-<h1 id="configures-the-sample-clock-for-the-task">Configures the sample clock for the task.</h1>
-<h1 id="it-sets-the-sampling-rate-to-1000-samples-per-second-1-khz">It sets the sampling rate to 1000 samples per second (1 kHz),</h1>
-<h1 id="and-uses-a-continuous-acquisition-mode-for-ongoing-data-collection">and uses a continuous acquisition mode for ongoing data collection.</h1>
+<h1 id="_3">============================================<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<h1 id="2-clock-sampling-rate">2. Clock &amp; Sampling Rate<a class="headerlink" href="#2-clock-sampling-rate" title="Permanent link">&para;</a></h1>
+<h1 id="_4">============================================<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<h1 id="configures-the-sample-clock-for-the-task">Configures the sample clock for the task.<a class="headerlink" href="#configures-the-sample-clock-for-the-task" title="Permanent link">&para;</a></h1>
+<h1 id="it-sets-the-sampling-rate-to-1000-samples-per-second-1-khz">It sets the sampling rate to 1000 samples per second (1 kHz),<a class="headerlink" href="#it-sets-the-sampling-rate-to-1000-samples-per-second-1-khz" title="Permanent link">&para;</a></h1>
+<h1 id="and-uses-a-continuous-acquisition-mode-for-ongoing-data-collection">and uses a continuous acquisition mode for ongoing data collection.<a class="headerlink" href="#and-uses-a-continuous-acquisition-mode-for-ongoing-data-collection" title="Permanent link">&para;</a></h1>
 <p>task.timing.cfg_samp_clk_timing(
     rate=1000,
     sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS
 )</p>
-<h1 id="_5">============================================</h1>
-<h1 id="3-start-stop-the-task">3. Start &amp; Stop the Task</h1>
-<h1 id="_6">============================================</h1>
-<h1 id="starts-the-daq-task-to-begin-data-acquisition">Starts the DAQ task to begin data acquisition.</h1>
+<h1 id="_5">============================================<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<h1 id="3-start-stop-the-task">3. Start &amp; Stop the Task<a class="headerlink" href="#3-start-stop-the-task" title="Permanent link">&para;</a></h1>
+<h1 id="_6">============================================<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<h1 id="starts-the-daq-task-to-begin-data-acquisition">Starts the DAQ task to begin data acquisition.<a class="headerlink" href="#starts-the-daq-task-to-begin-data-acquisition" title="Permanent link">&para;</a></h1>
 <p>task.start()</p>
-<h1 id="data-would-typically-be-read-here-in-a-loop-or-processing-function">Data would typically be read here in a loop or processing function.</h1>
-<h1 id="stops-the-task-after-acquisition-is-complete">Stops the task after acquisition is complete.</h1>
+<h1 id="data-would-typically-be-read-here-in-a-loop-or-processing-function">Data would typically be read here in a loop or processing function.<a class="headerlink" href="#data-would-typically-be-read-here-in-a-loop-or-processing-function" title="Permanent link">&para;</a></h1>
+<h1 id="stops-the-task-after-acquisition-is-complete">Stops the task after acquisition is complete.<a class="headerlink" href="#stops-the-task-after-acquisition-is-complete" title="Permanent link">&para;</a></h1>
 <p>task.stop()</p>
-<h1 id="properly-closes-and-releases-all-daq-resources">Properly closes and releases all DAQ resources.</h1>
+<h1 id="properly-closes-and-releases-all-daq-resources">Properly closes and releases all DAQ resources.<a class="headerlink" href="#properly-closes-and-releases-all-daq-resources" title="Permanent link">&para;</a></h1>
 <p>task.close()</p>
-<h1 id="_7">============================================</h1>
-<h1 id="output-summary">Output Summary</h1>
-<h1 id="_8">============================================</h1>
-<h1 id="-the-daq-system-is-initialized">- The DAQ system is initialized</h1>
-<h1 id="-the-analog-input-channel-is-defined">- The analog input channel is defined</h1>
-<h1 id="-sampling-rate-is-configured">- Sampling rate is configured</h1>
-<h1 id="-task-is-started-and-stopped-cleanly">- Task is started and stopped cleanly</h1>
-<h1 id="-the-system-is-ready-for-integration-with-data-logging">- The system is ready for integration with data logging</h1>
+<h1 id="_7">============================================<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<h1 id="output-summary">Output Summary<a class="headerlink" href="#output-summary" title="Permanent link">&para;</a></h1>
+<h1 id="_8">============================================<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<h1 id="-the-daq-system-is-initialized">- The DAQ system is initialized<a class="headerlink" href="#-the-daq-system-is-initialized" title="Permanent link">&para;</a></h1>
+<h1 id="-the-analog-input-channel-is-defined">- The analog input channel is defined<a class="headerlink" href="#-the-analog-input-channel-is-defined" title="Permanent link">&para;</a></h1>
+<h1 id="-sampling-rate-is-configured">- Sampling rate is configured<a class="headerlink" href="#-sampling-rate-is-configured" title="Permanent link">&para;</a></h1>
+<h1 id="-task-is-started-and-stopped-cleanly">- Task is started and stopped cleanly<a class="headerlink" href="#-task-is-started-and-stopped-cleanly" title="Permanent link">&para;</a></h1>
+<h1 id="-the-system-is-ready-for-integration-with-data-logging">- The system is ready for integration with data logging<a class="headerlink" href="#-the-system-is-ready-for-integration-with-data-logging" title="Permanent link">&para;</a></h1>
 
 
 
@@ -441,6 +593,8 @@ max_val=10.0)</p>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -472,7 +626,7 @@ max_val=10.0)</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
