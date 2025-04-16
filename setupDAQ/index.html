@@ -247,19 +247,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    setupDAQ.py
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -271,58 +258,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Core Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⚙️ Core Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-channel-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Channel Configuration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -436,47 +371,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Core Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⚙️ Core Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-channel-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Channel Configuration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -492,15 +386,44 @@
 
 
 <h1 id="setupdaqpy">setupDAQ.py</h1>
-<h2 id="overview">🔧 Overview</h2>
-<p>This script sets up a Data Acquisition (DAQ) task using NI-DAQmx, defining 
-the specific channels, timing parameters, and logging settings.<br />
-It’s modular and reusable across various test setups.</p>
-<hr />
-<h2 id="core-components">⚙️ Core Components</h2>
-<h3 id="1-channel-configuration">1. Channel Configuration</h3>
-<p>```python
-task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, max_val=10.0)</p>
+<p>This script initializes and configures a DAQ (Data Acquisition) task using 
+NI-DAQmx in Python.</p>
+<p>```python</p>
+<h1 id="_1">============================================</h1>
+<h1 id="1-channel-configuration">1. Channel Configuration</h1>
+<h1 id="_2">============================================</h1>
+<h1 id="adds-a-voltage-input-channel-ai0-to-the-task-with-a-10v-range">Adds a voltage input channel (AI0) to the task with a ±10V range.</h1>
+<h1 id="this-is-where-we-tell-the-daq-which-physical-channel-to-read-from">This is where we tell the DAQ which physical channel to read from.</h1>
+<p>task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
+max_val=10.0)</p>
+<h1 id="_3">============================================</h1>
+<h1 id="2-clock-sampling-rate">2. Clock &amp; Sampling Rate</h1>
+<h1 id="_4">============================================</h1>
+<h1 id="configures-the-sample-clock-for-the-task">Configures the sample clock for the task.</h1>
+<h1 id="it-sets-the-sampling-rate-to-1000-samples-per-second-1-khz">It sets the sampling rate to 1000 samples per second (1 kHz),</h1>
+<h1 id="and-uses-a-continuous-acquisition-mode-for-ongoing-data-collection">and uses a continuous acquisition mode for ongoing data collection.</h1>
+<p>task.timing.cfg_samp_clk_timing(
+    rate=1000,
+    sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS
+)</p>
+<h1 id="_5">============================================</h1>
+<h1 id="3-start-stop-the-task">3. Start &amp; Stop the Task</h1>
+<h1 id="_6">============================================</h1>
+<h1 id="starts-the-daq-task-to-begin-data-acquisition">Starts the DAQ task to begin data acquisition.</h1>
+<p>task.start()</p>
+<h1 id="data-would-typically-be-read-here-in-a-loop-or-processing-function">Data would typically be read here in a loop or processing function.</h1>
+<h1 id="stops-the-task-after-acquisition-is-complete">Stops the task after acquisition is complete.</h1>
+<p>task.stop()</p>
+<h1 id="properly-closes-and-releases-all-daq-resources">Properly closes and releases all DAQ resources.</h1>
+<p>task.close()</p>
+<h1 id="_7">============================================</h1>
+<h1 id="output-summary">Output Summary</h1>
+<h1 id="_8">============================================</h1>
+<h1 id="-the-daq-system-is-initialized">- The DAQ system is initialized</h1>
+<h1 id="-the-analog-input-channel-is-defined">- The analog input channel is defined</h1>
+<h1 id="-sampling-rate-is-configured">- Sampling rate is configured</h1>
+<h1 id="-task-is-started-and-stopped-cleanly">- Task is started and stopped cleanly</h1>
+<h1 id="-the-system-is-ready-for-integration-with-data-logging">- The system is ready for integration with data logging</h1>
 
 
 
