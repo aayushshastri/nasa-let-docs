@@ -544,32 +544,61 @@
 <p>Python.</p>
 <h1 id="it-defines-which-channels-to-use-the-timing-of-the-acquisition">It defines which channels to use, the timing of the acquisition,<a class="headerlink" href="#it-defines-which-channels-to-use-the-timing-of-the-acquisition" title="Permanent link">&para;</a></h1>
 <h1 id="and-how-the-daq-system-starts-and-stops">and how the DAQ system starts and stops.<a class="headerlink" href="#and-how-the-daq-system-starts-and-stops" title="Permanent link">&para;</a></h1>
-<h1 id="import-the-ni-daqmx-python-library">Import the NI-DAQmx Python library.<a class="headerlink" href="#import-the-ni-daqmx-python-library" title="Permanent link">&para;</a></h1>
-<p>import nidaqmx</p>
-<h1 id="create-a-new-task-object-which-will-manage-all-daq-operations">Create a new task object which will manage all DAQ operations.<a class="headerlink" href="#create-a-new-task-object-which-will-manage-all-daq-operations" title="Permanent link">&para;</a></h1>
-<p>task = nidaqmx.Task()</p>
-<h1 id="add-a-voltage-input-channel-ai0-on-device-dev1">Add a voltage input channel (AI0) on device Dev1.<a class="headerlink" href="#add-a-voltage-input-channel-ai0-on-device-dev1" title="Permanent link">&para;</a></h1>
-<h1 id="set-the-voltage-range-to-10v-for-analog-signal-acquisition">Set the voltage range to ±10V for analog signal acquisition.<a class="headerlink" href="#set-the-voltage-range-to-10v-for-analog-signal-acquisition" title="Permanent link">&para;</a></h1>
-<p>task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
-max_val=10.0)</p>
-<h1 id="configure-the-task-to-acquire-samples-continuously">Configure the task to acquire samples continuously.<a class="headerlink" href="#configure-the-task-to-acquire-samples-continuously" title="Permanent link">&para;</a></h1>
-<h1 id="set-the-sampling-rate-to-1000-samples-per-second-1-khz">Set the sampling rate to 1000 samples per second (1 kHz).<a class="headerlink" href="#set-the-sampling-rate-to-1000-samples-per-second-1-khz" title="Permanent link">&para;</a></h1>
-<p>task.timing.cfg_samp_clk_timing(
-    rate=1000,
-    sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS
-)</p>
-<h1 id="start-the-task-the-daq-device-begins-acquiring-data">Start the task. The DAQ device begins acquiring data.<a class="headerlink" href="#start-the-task-the-daq-device-begins-acquiring-data" title="Permanent link">&para;</a></h1>
-<p>task.start()</p>
+<p>Setup
+python
+Copy
+Edit
+<em>import nidaqmx</em>
+Import the NI-DAQmx Python library.</p>
+<p>python
+Copy
+Edit
+<em>task = nidaqmx.Task()</em>
+Create a new task object which will manage all DAQ operations.</p>
+<p>Channel Configuration
+python
+Copy
+Edit
+<em>task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
+max_val=10.0)</em>
+Add a voltage input channel (AI0) on device Dev1 with a ±10V input range.</p>
+<p>Clock and Sampling Rate
+python
+Copy
+Edit
+<em>task.timing.cfg_samp_clk_timing(</em>
+*    rate=1000,<em>
+*    sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS</em>
+<em>)</em>
+Configure the task for continuous acquisition at 1000 samples per second.</p>
+<p>Task Execution
+python
+Copy
+Edit
+<em>task.start()</em>
+Start the data acquisition task. The DAQ device begins collecting data.</p>
+<p>python
+Copy
+Edit</p>
 <h1 id="insert-your-acquisition-logic-here">Insert your acquisition logic here.<a class="headerlink" href="#insert-your-acquisition-logic-here" title="Permanent link">&para;</a></h1>
-<h1 id="example-read-data-from-the-buffer-process-it-or-log-it-to-a-file">Example: read data from the buffer, process it, or log it to a file.<a class="headerlink" href="#example-read-data-from-the-buffer-process-it-or-log-it-to-a-file" title="Permanent link">&para;</a></h1>
-<h1 id="stop-the-task-after-acquisition-is-done">Stop the task after acquisition is done.<a class="headerlink" href="#stop-the-task-after-acquisition-is-done" title="Permanent link">&para;</a></h1>
-<p>task.stop()</p>
-<h1 id="close-and-release-the-task-resources">Close and release the task resources.<a class="headerlink" href="#close-and-release-the-task-resources" title="Permanent link">&para;</a></h1>
-<p>task.close()</p>
-<h1 id="-analog-input-channel-ai0-is-now-configured-with-10v-range">- Analog input channel AI0 is now configured with ±10V range.<a class="headerlink" href="#-analog-input-channel-ai0-is-now-configured-with-10v-range" title="Permanent link">&para;</a></h1>
-<h1 id="-task-is-set-to-acquire-data-continuously-at-1000-samplessec">- Task is set to acquire data continuously at 1000 samples/sec.<a class="headerlink" href="#-task-is-set-to-acquire-data-continuously-at-1000-samplessec" title="Permanent link">&para;</a></h1>
-<h1 id="-this-setup-can-be-reused-for-daq-loops-real-time-monitoring-or">- This setup can be reused for DAQ loops, real-time monitoring, or<a class="headerlink" href="#-this-setup-can-be-reused-for-daq-loops-real-time-monitoring-or" title="Permanent link">&para;</a></h1>
-<p>logging workflows.</p>
+<h1 id="for-example-read-data-from-the-buffer-process-it-or-log-it-to-a-file">For example: read data from the buffer, process it, or log it to a file.<a class="headerlink" href="#for-example-read-data-from-the-buffer-process-it-or-log-it-to-a-file" title="Permanent link">&para;</a></h1>
+<p>python
+Copy
+Edit
+<em>task.stop()</em>
+Stop the task after acquisition is complete.</p>
+<p>python
+Copy
+Edit
+<em>task.close()</em>
+Close and release the task to free system resources.</p>
+<p>Output Summary
+python
+Copy
+Edit</p>
+<h1 id="-ai0-channel-on-dev1-is-configured-for-10v-analog-input">- AI0 channel on Dev1 is configured for ±10V analog input.<a class="headerlink" href="#-ai0-channel-on-dev1-is-configured-for-10v-analog-input" title="Permanent link">&para;</a></h1>
+<h1 id="-sampling-is-set-to-continuous-mode-at-1-khz-1000-samplessec">- Sampling is set to continuous mode at 1 kHz (1000 samples/sec).<a class="headerlink" href="#-sampling-is-set-to-continuous-mode-at-1-khz-1000-samplessec" title="Permanent link">&para;</a></h1>
+<h1 id="-ready-to-be-used-in-a-loop-logger-or-real-time-application">- Ready to be used in a loop, logger, or real-time application.<a class="headerlink" href="#-ready-to-be-used-in-a-loop-logger-or-real-time-application" title="Permanent link">&para;</a></h1>
 
 
 
