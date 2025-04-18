@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setupdaqpy" class="md-skip">
+        <a href="#insert-your-acquisition-logic-here" class="md-skip">
           Skip to content
         </a>
       
@@ -537,24 +537,69 @@
 
 
 
-<h1 id="setupdaqpy">setupDAQ.py<a class="headerlink" href="#setupdaqpy" title="Permanent link">&para;</a></h1>
-<p>```python</p>
-<h1 id="setupdaqpy_1">setupDAQ.py<a class="headerlink" href="#setupdaqpy_1" title="Permanent link">&para;</a></h1>
-<h1 id="this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in">This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in<a class="headerlink" href="#this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in" title="Permanent link">&para;</a></h1>
-<p>Python.</p>
-<h1 id="it-defines-which-channels-to-use-the-timing-of-the-acquisition">It defines which channels to use, the timing of the acquisition,<a class="headerlink" href="#it-defines-which-channels-to-use-the-timing-of-the-acquisition" title="Permanent link">&para;</a></h1>
-<h1 id="and-how-the-daq-system-starts-and-stops">and how the DAQ system starts and stops.<a class="headerlink" href="#and-how-the-daq-system-starts-and-stops" title="Permanent link">&para;</a></h1>
-<p><em>import nidaqmx</em>
+<p>Setup
+python
+Copy
+Edit
+<em>import nidaqmx</em>
+Import the NI-DAQmx Python library.</p>
+<p>python
+Copy
+Edit
 <em>task = nidaqmx.Task()</em>
+Create a new task object which will manage all DAQ operations.</p>
+<p>Channel Configuration
+python
+Copy
+Edit
 <em>task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
 max_val=10.0)</em>
+Add a voltage input channel (AI0) on device Dev1 with a ±10V input range.</p>
+<p>Clock and Sampling Rate
+python
+Copy
+Edit
 <em>task.timing.cfg_samp_clk_timing(</em>
 *    rate=1000,<em>
 *    sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS</em>
 <em>)</em>
-Configure the task for continuous acquisition at 1000 samples per second.
-Task Execution
-<em>task.start()</em></p>
+Configure the task for continuous acquisition at 1000 samples per second.</p>
+<p>Task Execution
+python
+Copy
+Edit
+<em>task.start()</em>
+Start the data acquisition task. The DAQ device begins collecting data.</p>
+<p>python
+Copy
+Edit</p>
+<h1 id="insert-your-acquisition-logic-here">Insert your acquisition logic here.<a class="headerlink" href="#insert-your-acquisition-logic-here" title="Permanent link">&para;</a></h1>
+<h1 id="for-example-read-data-from-the-buffer-process-it-or-log-it-to-a-file">For example: read data from the buffer, process it, or log it to a file.<a class="headerlink" href="#for-example-read-data-from-the-buffer-process-it-or-log-it-to-a-file" title="Permanent link">&para;</a></h1>
+<p>python
+Copy
+Edit
+<em>task.stop()</em>
+Stop the task after acquisition is complete.</p>
+<p>python
+Copy
+Edit
+<em>task.close()</em>
+Close and release the task to free system resources.</p>
+<p>Output Summary
+python
+Copy
+Edit</p>
+<h1 id="-ai0-channel-on-dev1-is-configured-for-10v-analog-input">- AI0 channel on Dev1 is configured for ±10V analog input.<a class="headerlink" href="#-ai0-channel-on-dev1-is-configured-for-10v-analog-input" title="Permanent link">&para;</a></h1>
+<h1 id="-sampling-is-set-to-continuous-mode-at-1-khz-1000-samplessec">- Sampling is set to continuous mode at 1 kHz (1000 samples/sec).<a class="headerlink" href="#-sampling-is-set-to-continuous-mode-at-1-khz-1000-samplessec" title="Permanent link">&para;</a></h1>
+<h1 id="-ready-to-be-used-in-a-loop-logger-or-real-time-application">- Ready to be used in a loop, logger, or real-time application.<a class="headerlink" href="#-ready-to-be-used-in-a-loop-logger-or-real-time-application" title="Permanent link">&para;</a></h1>
+<p>Why Use This Script?
+python
+Copy
+Edit</p>
+<h1 id="-speeds-up-setup-for-daq-hardware">- Speeds up setup for DAQ hardware.<a class="headerlink" href="#-speeds-up-setup-for-daq-hardware" title="Permanent link">&para;</a></h1>
+<h1 id="-eliminates-boilerplate-configuration-code">- Eliminates boilerplate configuration code.<a class="headerlink" href="#-eliminates-boilerplate-configuration-code" title="Permanent link">&para;</a></h1>
+<h1 id="-clearly-separates-initialization-from-runtime-acquisition-logic">- Clearly separates initialization from runtime acquisition logic.<a class="headerlink" href="#-clearly-separates-initialization-from-runtime-acquisition-logic" title="Permanent link">&para;</a></h1>
+<h1 id="-ideal-for-automation-logging-and-experiments">- Ideal for automation, logging, and experiments.<a class="headerlink" href="#-ideal-for-automation-logging-and-experiments" title="Permanent link">&para;</a></h1>
 
 
 
