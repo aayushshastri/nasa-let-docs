@@ -467,15 +467,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Task Execution
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#output-summary" class="md-nav__link">
     <span class="md-ellipsis">
       Output Summary
@@ -643,15 +634,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Task Execution
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#output-summary" class="md-nav__link">
     <span class="md-ellipsis">
       Output Summary
@@ -687,77 +669,76 @@
 
 <h1 id="setupdaqpy">setupDAQ.py<a class="headerlink" href="#setupdaqpy" title="Permanent link">&para;</a></h1>
 <hr />
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># setupDAQ.py&lt;/i&gt;&lt;/span&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># This script sets up a Data Acquisition </span>
-<span class="p">(</span><span class="n">DAQ</span><span class="p">)</span> <span class="n">task</span> <span class="n">using</span> <span class="n">NI</span><span class="o">-</span><span class="n">DAQmx</span> <span class="ow">in</span> <span class="n">Python</span><span class="o">.&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># It defines which channels to use, the </span>
-<span class="n">timing</span> <span class="n">of</span> <span class="n">the</span> <span class="n">acquisition</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># and how the DAQ system starts and </span>
-<span class="n">stops</span><span class="o">.&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># setupDAQ.py<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># This script sets up a Data Acquisition 
+(DAQ) task using NI-DAQmx in Python.<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># It defines which channels to use, the 
+timing of the acquisition,<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># and how the DAQ system starts and 
+stops.<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in 
 Python. It defines which channels to use, the timing of the acquisition, 
 and how the DAQ system starts and stops.</strong></p>
 <hr />
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="kn">import</span><span class="w"> </span><span class="nn">nidaqmx</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>import nidaqmx<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Import the NI-DAQmx Python library.</strong></p>
 <hr />
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">task</span> <span class="o">=</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">Task</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>task = nidaqmx.Task()<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Create a new task object to manage DAQ operations.</strong></p>
 <hr />
 <h2 id="channel-configuration">Channel Configuration<a class="headerlink" href="#channel-configuration" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> 
-<span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">task</span><span class="o">.</span><span class="n">ai_channels</span><span class="o">.</span><span class="n">add_ai_voltage_chan</span><span class="p">(</span><span class="s2">&quot;Dev1/ai0&quot;</span><span class="p">,</span> 
-<span class="n">min_val</span><span class="o">=-</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">max_val</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> 
+<span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>task.ai_channels.add_ai_voltage_chan(&quot;Dev1/ai0&quot;, 
+min_val=-10.0, max_val=10.0)<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Add AI0 channel on Dev1 with ±10V input range.</strong></p>
 <hr />
 <h2 id="clock-and-sampling-rate">Clock and Sampling Rate<a class="headerlink" href="#clock-and-sampling-rate" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">task</span><span class="o">.</span><span class="n">timing</span><span class="o">.</span><span class="n">cfg_samp_clk_timing</span><span class="p">(</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span>    <span class="n">rate</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span>    
-<span class="n">sample_mode</span><span class="o">=</span><span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">AcquisitionType</span><span class="o">.</span><span class="n">CONTINUOUS</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>task.timing.cfg_samp_clk_timing(<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>    rate=1000,<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>    
+sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>)<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Configure the sample clock for continuous acquisition at 1000 Hz.</strong></p>
 <hr />
-<h2 id="task-execution">Task Execution<a class="headerlink" href="#task-execution" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">task</span><span class="o">.</span><span class="n">start</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>task.start()<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Start the task to begin acquisition.</strong></p>
 <hr />
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># Insert acquisition logic here (e.g., read </span>
-<span class="n">buffer</span><span class="p">,</span> <span class="n">log</span> <span class="n">data</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># Insert acquisition logic here (e.g., read 
+buffer, log data)<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Placeholder for your acquisition or processing logic.</strong></p>
 <hr />
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">task</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>task.stop()<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Stop the task after acquisition is complete.</strong></p>
 <hr />
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">task</span><span class="o">.</span><span class="n">close</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>task.close()<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Close the task to release hardware and clean up resources.</strong></p>
 <hr />
 <h2 id="output-summary">Output Summary<a class="headerlink" href="#output-summary" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># AI0 on Dev1 configured for </span>
-<span class="err">±</span><span class="mi">10</span><span class="n">V</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># Sampling at 1000 Hz, continuous </span>
-<span class="n">mode</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># System is ready for integration in a DAQ </span>
-<span class="n">loop</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># AI0 on Dev1 configured for 
+±10V<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># Sampling at 1000 Hz, continuous 
+mode<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># System is ready for integration in a DAQ 
+loop<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>System is now fully initialized and ready for real-time data 
 acquisition.</strong></p>
 <hr />
 <h2 id="why-use-this-script">Why Use This Script?<a class="headerlink" href="#why-use-this-script" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># Quick DAQ hardware setup&lt;/i&gt;&lt;/span&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># Avoids boilerplate duplication&lt;/i&gt;&lt;/span&gt;</span>
-<span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:#1565c0&quot;</span><span class="o">&gt;&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="c1"># Separates setup logic from runtime </span>
-<span class="n">processing</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># Quick DAQ hardware setup<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># Avoids boilerplate duplication<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#1565c0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span># Separates setup logic from runtime 
+processing<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </code></pre></div>
 <p><strong>Useful for lab automation, reusable scripts, and scalable data 
 systems.</strong></p>
