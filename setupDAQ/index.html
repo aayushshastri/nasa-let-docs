@@ -399,19 +399,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    setupDAQ.py
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -423,34 +410,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-channel-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Channel Configuration
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -564,23 +523,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-channel-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Channel Configuration
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -596,67 +538,38 @@
 
 
 <h1 id="setupdaqpy">setupDAQ.py<a class="headerlink" href="#setupdaqpy" title="Permanent link">&para;</a></h1>
-<p>This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in 
-Python. It defines which channels to use, the timing of the acquisition, 
-and how the DAQ system starts and stops.</p>
-<hr />
-<h2 id="1-channel-configuration">1. Channel Configuration<a class="headerlink" href="#1-channel-configuration" title="Permanent link">&para;</a></h2>
-<h1 id="setupdaqpy_1">setupDAQ.py<a class="headerlink" href="#setupdaqpy_1" title="Permanent link">&para;</a></h1>
 <p>```python</p>
-<h1 id="setupdaqpy_2">setupDAQ.py<a class="headerlink" href="#setupdaqpy_2" title="Permanent link">&para;</a></h1>
+<h1 id="setupdaqpy_1">setupDAQ.py<a class="headerlink" href="#setupdaqpy_1" title="Permanent link">&para;</a></h1>
 <h1 id="this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in">This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in<a class="headerlink" href="#this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in" title="Permanent link">&para;</a></h1>
 <p>Python.</p>
-<h1 id="it-defines-which-channels-to-use-sets-timing-for-data-acquisition">It defines which channels to use, sets timing for data acquisition,<a class="headerlink" href="#it-defines-which-channels-to-use-sets-timing-for-data-acquisition" title="Permanent link">&para;</a></h1>
-<h1 id="and-handles-task-lifecycle-including-start-acquisition-and-stop">and handles task lifecycle including start, acquisition, and stop.<a class="headerlink" href="#and-handles-task-lifecycle-including-start-acquisition-and-stop" title="Permanent link">&para;</a></h1>
-<p>Setup
-python
-Copy
-Edit</p>
-<h1 id="import-required-module">Import required module<a class="headerlink" href="#import-required-module" title="Permanent link">&para;</a></h1>
+<h1 id="it-defines-which-channels-to-use-the-timing-of-the-acquisition">It defines which channels to use, the timing of the acquisition,<a class="headerlink" href="#it-defines-which-channels-to-use-the-timing-of-the-acquisition" title="Permanent link">&para;</a></h1>
+<h1 id="and-how-the-daq-system-starts-and-stops">and how the DAQ system starts and stops.<a class="headerlink" href="#and-how-the-daq-system-starts-and-stops" title="Permanent link">&para;</a></h1>
+<h1 id="import-the-ni-daqmx-python-library">Import the NI-DAQmx Python library.<a class="headerlink" href="#import-the-ni-daqmx-python-library" title="Permanent link">&para;</a></h1>
 <p>import nidaqmx</p>
-<h1 id="create-a-daq-task-object">Create a DAQ task object<a class="headerlink" href="#create-a-daq-task-object" title="Permanent link">&para;</a></h1>
-<p>task = nidaqmx.Task()
-Channel Configuration
-python
-Copy
-Edit</p>
-<h1 id="add-a-voltage-input-channel-ai0-to-the-task-with-a-10v-range">Add a voltage input channel (AI0) to the task with a ±10V range.<a class="headerlink" href="#add-a-voltage-input-channel-ai0-to-the-task-with-a-10v-range" title="Permanent link">&para;</a></h1>
-<h1 id="this-specifies-the-physical-channel-and-the-expected-voltage-range-for">This specifies the physical channel and the expected voltage range for<a class="headerlink" href="#this-specifies-the-physical-channel-and-the-expected-voltage-range-for" title="Permanent link">&para;</a></h1>
-<p>measurement.
-task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
-max_val=10.0)
-Clock and Sampling Rate
-python
-Copy
-Edit</p>
-<h1 id="configure-the-sample-clock-timing">Configure the sample clock timing.<a class="headerlink" href="#configure-the-sample-clock-timing" title="Permanent link">&para;</a></h1>
-<h1 id="this-sets-the-rate-to-1000-samples-per-second-and-specifies-a-continuous">This sets the rate to 1000 samples per second and specifies a continuous<a class="headerlink" href="#this-sets-the-rate-to-1000-samples-per-second-and-specifies-a-continuous" title="Permanent link">&para;</a></h1>
-<p>acquisition mode.
-task.timing.cfg_samp_clk_timing(
+<h1 id="create-a-new-task-object-which-will-manage-all-daq-operations">Create a new task object which will manage all DAQ operations.<a class="headerlink" href="#create-a-new-task-object-which-will-manage-all-daq-operations" title="Permanent link">&para;</a></h1>
+<p>task = nidaqmx.Task()</p>
+<h1 id="add-a-voltage-input-channel-ai0-on-device-dev1">Add a voltage input channel (AI0) on device Dev1.<a class="headerlink" href="#add-a-voltage-input-channel-ai0-on-device-dev1" title="Permanent link">&para;</a></h1>
+<h1 id="set-the-voltage-range-to-10v-for-analog-signal-acquisition">Set the voltage range to ±10V for analog signal acquisition.<a class="headerlink" href="#set-the-voltage-range-to-10v-for-analog-signal-acquisition" title="Permanent link">&para;</a></h1>
+<p>task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
+max_val=10.0)</p>
+<h1 id="configure-the-task-to-acquire-samples-continuously">Configure the task to acquire samples continuously.<a class="headerlink" href="#configure-the-task-to-acquire-samples-continuously" title="Permanent link">&para;</a></h1>
+<h1 id="set-the-sampling-rate-to-1000-samples-per-second-1-khz">Set the sampling rate to 1000 samples per second (1 kHz).<a class="headerlink" href="#set-the-sampling-rate-to-1000-samples-per-second-1-khz" title="Permanent link">&para;</a></h1>
+<p>task.timing.cfg_samp_clk_timing(
     rate=1000,
     sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS
-)
-Start and Stop the Task
-python
-Copy
-Edit</p>
-<h1 id="start-the-data-acquisition-task">Start the data acquisition task.<a class="headerlink" href="#start-the-data-acquisition-task" title="Permanent link">&para;</a></h1>
+)</p>
+<h1 id="start-the-task-the-daq-device-begins-acquiring-data">Start the task. The DAQ device begins acquiring data.<a class="headerlink" href="#start-the-task-the-daq-device-begins-acquiring-data" title="Permanent link">&para;</a></h1>
 <p>task.start()</p>
-<h1 id="insert-acquisition-logic-here">... Insert acquisition logic here ...<a class="headerlink" href="#insert-acquisition-logic-here" title="Permanent link">&para;</a></h1>
-<h1 id="for-example-reading-data-from-the-buffer-or-logging-it-to-a-file">For example, reading data from the buffer or logging it to a file.<a class="headerlink" href="#for-example-reading-data-from-the-buffer-or-logging-it-to-a-file" title="Permanent link">&para;</a></h1>
-<h1 id="stop-the-task-after-data-acquisition-is-complete">Stop the task after data acquisition is complete.<a class="headerlink" href="#stop-the-task-after-data-acquisition-is-complete" title="Permanent link">&para;</a></h1>
+<h1 id="insert-your-acquisition-logic-here">Insert your acquisition logic here.<a class="headerlink" href="#insert-your-acquisition-logic-here" title="Permanent link">&para;</a></h1>
+<h1 id="example-read-data-from-the-buffer-process-it-or-log-it-to-a-file">Example: read data from the buffer, process it, or log it to a file.<a class="headerlink" href="#example-read-data-from-the-buffer-process-it-or-log-it-to-a-file" title="Permanent link">&para;</a></h1>
+<h1 id="stop-the-task-after-acquisition-is-done">Stop the task after acquisition is done.<a class="headerlink" href="#stop-the-task-after-acquisition-is-done" title="Permanent link">&para;</a></h1>
 <p>task.stop()</p>
-<h1 id="close-the-task-to-free-up-system-resources">Close the task to free up system resources.<a class="headerlink" href="#close-the-task-to-free-up-system-resources" title="Permanent link">&para;</a></h1>
-<p>task.close()
-Output Summary
-python
-Copy
-Edit</p>
-<h1 id="the-analog-input-channel-is-configured-and-ready-for-data-collection">The analog input channel is configured and ready for data collection.<a class="headerlink" href="#the-analog-input-channel-is-configured-and-ready-for-data-collection" title="Permanent link">&para;</a></h1>
-<h1 id="the-timing-is-set-to-acquire-data-continuously-at-1-khz-1000">The timing is set to acquire data continuously at 1 kHz (1000<a class="headerlink" href="#the-timing-is-set-to-acquire-data-continuously-at-1-khz-1000" title="Permanent link">&para;</a></h1>
-<p>samples/sec).</p>
-<h1 id="the-task-is-structured-for-easy-integration-into-data-acquisition-loops">The task is structured for easy integration into data acquisition loops<a class="headerlink" href="#the-task-is-structured-for-easy-integration-into-data-acquisition-loops" title="Permanent link">&para;</a></h1>
-<p>or logging systems.</p>
+<h1 id="close-and-release-the-task-resources">Close and release the task resources.<a class="headerlink" href="#close-and-release-the-task-resources" title="Permanent link">&para;</a></h1>
+<p>task.close()</p>
+<h1 id="-analog-input-channel-ai0-is-now-configured-with-10v-range">- Analog input channel AI0 is now configured with ±10V range.<a class="headerlink" href="#-analog-input-channel-ai0-is-now-configured-with-10v-range" title="Permanent link">&para;</a></h1>
+<h1 id="-task-is-set-to-acquire-data-continuously-at-1000-samplessec">- Task is set to acquire data continuously at 1000 samples/sec.<a class="headerlink" href="#-task-is-set-to-acquire-data-continuously-at-1000-samplessec" title="Permanent link">&para;</a></h1>
+<h1 id="-this-setup-can-be-reused-for-daq-loops-real-time-monitoring-or">- This setup can be reused for DAQ loops, real-time monitoring, or<a class="headerlink" href="#-this-setup-can-be-reused-for-daq-loops-real-time-monitoring-or" title="Permanent link">&para;</a></h1>
+<p>logging workflows.</p>
 
 
 
