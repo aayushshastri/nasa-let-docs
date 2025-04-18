@@ -440,9 +440,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#script-description" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Script Description
+      Setup
     </span>
   </a>
   
@@ -571,9 +571,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#script-description" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Script Description
+      Setup
     </span>
   </a>
   
@@ -597,19 +597,12 @@
 
 <h1 id="setupdaqpy">setupDAQ.py<a class="headerlink" href="#setupdaqpy" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="script-description">Script Description<a class="headerlink" href="#script-description" title="Permanent link">&para;</a></h2>
+<p><strong>This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in 
+Python. It defines which channels to use, the timing of the acquisition, 
+and how the DAQ system starts and stops.</strong></p>
+<hr />
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>```python</p>
-<h1 id="setupdaqpy_1"><span style="color:#1565c0"><i>setupDAQ.py</i></span><a class="headerlink" href="#setupdaqpy_1" title="Permanent link">&para;</a></h1>
-<h1 id="this-script-sets-up-a-data-acquisition"><span style="color:#1565c0"><i>This script sets up a Data Acquisition<a class="headerlink" href="#this-script-sets-up-a-data-acquisition" title="Permanent link">&para;</a></h1>
-<p>(DAQ) task using NI-DAQmx in Python.</i></span></p>
-<h1 id="it-defines-which-channels-to-use-the"><span style="color:#1565c0"><i>It defines which channels to use, the<a class="headerlink" href="#it-defines-which-channels-to-use-the" title="Permanent link">&para;</a></h1>
-<p>timing of the acquisition,</i></span></p>
-<h1 id="and-how-the-daq-system-starts-and"><span style="color:#1565c0"><i>and how the DAQ system starts and<a class="headerlink" href="#and-how-the-daq-system-starts-and" title="Permanent link">&para;</a></h1>
-<p>stops.</i></span>
-Setup
-python
-Copy
-Edit</p>
 <h1 id="import-nidaqmx"><span style="color:#1565c0"><i>import nidaqmx</i></span><a class="headerlink" href="#import-nidaqmx" title="Permanent link">&para;</a></h1>
 <p>Import the NI-DAQmx Python library.</p>
 <p>python
@@ -645,31 +638,32 @@ Edit</p>
 <p>python
 Copy
 Edit</p>
-<h1 id="insert-logic-here-eg-read-data-process-log">Insert logic here (e.g., read data, process, log)<a class="headerlink" href="#insert-logic-here-eg-read-data-process-log" title="Permanent link">&para;</a></h1>
+<h1 id="insert-acquisition-logic-here">Insert acquisition logic here<a class="headerlink" href="#insert-acquisition-logic-here" title="Permanent link">&para;</a></h1>
+<h1 id="for-example-read-buffer-log-data-etc">For example: read buffer, log data, etc.<a class="headerlink" href="#for-example-read-buffer-log-data-etc" title="Permanent link">&para;</a></h1>
 <p>python
 Copy
 Edit</p>
 <h1 id="taskstop"><span style="color:#1565c0"><i>task.stop()</i></span><a class="headerlink" href="#taskstop" title="Permanent link">&para;</a></h1>
-<p>Stop the task.</p>
+<p>Stop the task once acquisition is done.</p>
 <p>python
 Copy
 Edit</p>
 <h1 id="taskclose"><span style="color:#1565c0"><i>task.close()</i></span><a class="headerlink" href="#taskclose" title="Permanent link">&para;</a></h1>
-<p>Close and clean up the task.</p>
+<p>Close the task to release hardware resources.</p>
 <p>Output Summary
 python
 Copy
 Edit</p>
-<h1 id="-ai0-on-dev1-set-up-for-10v">- AI0 on Dev1 set up for ±10V<a class="headerlink" href="#-ai0-on-dev1-set-up-for-10v" title="Permanent link">&para;</a></h1>
-<h1 id="-sampling-at-1khz-in-continuous-mode">- Sampling at 1kHz in continuous mode<a class="headerlink" href="#-sampling-at-1khz-in-continuous-mode" title="Permanent link">&para;</a></h1>
-<h1 id="-modular-and-clean-for-reuse">- Modular and clean for reuse<a class="headerlink" href="#-modular-and-clean-for-reuse" title="Permanent link">&para;</a></h1>
+<h1 id="-ai0-on-dev1-configured-for-10v">- AI0 on Dev1 configured for ±10V<a class="headerlink" href="#-ai0-on-dev1-configured-for-10v" title="Permanent link">&para;</a></h1>
+<h1 id="-sampling-rate-1000-hz-1khz-continuous-mode">- Sampling rate: 1000 Hz (1kHz), continuous mode<a class="headerlink" href="#-sampling-rate-1000-hz-1khz-continuous-mode" title="Permanent link">&para;</a></h1>
+<h1 id="-ready-for-integration-into-acquisition-or-logging-systems">- Ready for integration into acquisition or logging systems<a class="headerlink" href="#-ready-for-integration-into-acquisition-or-logging-systems" title="Permanent link">&para;</a></h1>
 <p>Why Use This Script?
 python
 Copy
 Edit</p>
-<h1 id="-fast-setup-for-daq-hardware">- Fast setup for DAQ hardware<a class="headerlink" href="#-fast-setup-for-daq-hardware" title="Permanent link">&para;</a></h1>
-<h1 id="-avoids-repetitive-config-code">- Avoids repetitive config code<a class="headerlink" href="#-avoids-repetitive-config-code" title="Permanent link">&para;</a></h1>
-<h1 id="-ideal-for-automation-lab-use-or-logging-systems">- Ideal for automation, lab use, or logging systems<a class="headerlink" href="#-ideal-for-automation-lab-use-or-logging-systems" title="Permanent link">&para;</a></h1>
+<h1 id="-quick-and-repeatable-daq-setup">- Quick and repeatable DAQ setup<a class="headerlink" href="#-quick-and-repeatable-daq-setup" title="Permanent link">&para;</a></h1>
+<h1 id="-avoids-rewriting-configuration-boilerplate">- Avoids rewriting configuration boilerplate<a class="headerlink" href="#-avoids-rewriting-configuration-boilerplate" title="Permanent link">&para;</a></h1>
+<h1 id="-modular-separation-between-setup-and-logic">- Modular separation between setup and logic<a class="headerlink" href="#-modular-separation-between-setup-and-logic" title="Permanent link">&para;</a></h1>
 
 
 
