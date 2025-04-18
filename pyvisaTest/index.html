@@ -462,35 +462,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#full-code-with-inline-documentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Full Code with Inline Documentation
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Highlights
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Code Highlights">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-import-resource-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Import &amp; Resource Manager
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -595,35 +571,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#full-code-with-inline-documentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Full Code with Inline Documentation
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Highlights
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Code Highlights">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-import-resource-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Import &amp; Resource Manager
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -644,16 +596,41 @@
 
 
 <h1 id="pyvisatestpy">pyvisaTest.py<a class="headerlink" href="#pyvisatestpy" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>This script uses the <code>pyvisa</code> library to <strong>communicate with external 
-hardware</strong> over VISA protocol (e.g., GPIB, USB, RS232).<br />
-It’s used to query device identity and test connectivity.</p>
+<p>This script initializes and communicates with an instrument over VISA 
+using PyVISA.</p>
 <hr />
-<h2 id="code-highlights">Code Highlights<a class="headerlink" href="#code-highlights" title="Permanent link">&para;</a></h2>
-<h3 id="1-import-resource-manager">1. Import &amp; Resource Manager<a class="headerlink" href="#1-import-resource-manager" title="Permanent link">&para;</a></h3>
-<p>```python
-import pyvisa
-rm = pyvisa.ResourceManager()</p>
+<h2 id="full-code-with-inline-documentation">Full Code with Inline Documentation<a class="headerlink" href="#full-code-with-inline-documentation" title="Permanent link">&para;</a></h2>
+<p>```python</p>
+<h1 id="imports">=== IMPORTS ===<a class="headerlink" href="#imports" title="Permanent link">&para;</a></h1>
+<h1 id="import-the-pyvisa-library-and-initialize-a-resource-manager">Import the PyVISA library and initialize a resource manager<a class="headerlink" href="#import-the-pyvisa-library-and-initialize-a-resource-manager" title="Permanent link">&para;</a></h1>
+<p>import pyvisa</p>
+<h1 id="setup-resource-manager">=== SETUP RESOURCE MANAGER ===<a class="headerlink" href="#setup-resource-manager" title="Permanent link">&para;</a></h1>
+<h1 id="create-a-resourcemanager-object-to-detect-available-visa-instruments">Create a ResourceManager object to detect available VISA instruments<a class="headerlink" href="#create-a-resourcemanager-object-to-detect-available-visa-instruments" title="Permanent link">&para;</a></h1>
+<p>rm = pyvisa.ResourceManager()</p>
+<h1 id="instrument-discovery">=== INSTRUMENT DISCOVERY ===<a class="headerlink" href="#instrument-discovery" title="Permanent link">&para;</a></h1>
+<h1 id="list-all-connected-visa-instruments">List all connected VISA instruments<a class="headerlink" href="#list-all-connected-visa-instruments" title="Permanent link">&para;</a></h1>
+<p>instruments = rm.list_resources()
+print("Connected instruments:", instruments)</p>
+<h1 id="connect-to-instrument">=== CONNECT TO INSTRUMENT ===<a class="headerlink" href="#connect-to-instrument" title="Permanent link">&para;</a></h1>
+<h1 id="open-a-session-to-the-first-instrument-or-manually-specify-an-address">Open a session to the first instrument (or manually specify an address)<a class="headerlink" href="#open-a-session-to-the-first-instrument-or-manually-specify-an-address" title="Permanent link">&para;</a></h1>
+<h1 id="you-can-use-a-specific-address-like">You can use a specific address like<a class="headerlink" href="#you-can-use-a-specific-address-like" title="Permanent link">&para;</a></h1>
+<p>"USB0::0x0699::0x0346::C010101::INSTR"
+inst = rm.open_resource(instruments[0])</p>
+<h1 id="communication-settings">=== COMMUNICATION SETTINGS ===<a class="headerlink" href="#communication-settings" title="Permanent link">&para;</a></h1>
+<h1 id="optional-set-timeout-and-termination-characters">Optional: Set timeout and termination characters<a class="headerlink" href="#optional-set-timeout-and-termination-characters" title="Permanent link">&para;</a></h1>
+<p>inst.timeout = 5000  # timeout in milliseconds
+inst.write_termination = '\n'
+inst.read_termination = '\n'</p>
+<h1 id="write-to-instrument">=== WRITE TO INSTRUMENT ===<a class="headerlink" href="#write-to-instrument" title="Permanent link">&para;</a></h1>
+<h1 id="send-a-standard-identification-query-to-the-device">Send a standard identification query to the device<a class="headerlink" href="#send-a-standard-identification-query-to-the-device" title="Permanent link">&para;</a></h1>
+<p>inst.write("*IDN?")</p>
+<h1 id="read-response">=== READ RESPONSE ===<a class="headerlink" href="#read-response" title="Permanent link">&para;</a></h1>
+<h1 id="read-and-print-the-response-from-the-instrument">Read and print the response from the instrument<a class="headerlink" href="#read-and-print-the-response-from-the-instrument" title="Permanent link">&para;</a></h1>
+<p>response = inst.read()
+print("Instrument ID:", response)</p>
+<h1 id="clean-up">=== CLEAN UP ===<a class="headerlink" href="#clean-up" title="Permanent link">&para;</a></h1>
+<h1 id="close-the-session-once-done">Close the session once done<a class="headerlink" href="#close-the-session-once-done" title="Permanent link">&para;</a></h1>
+<p>inst.close()</p>
 
 
 
