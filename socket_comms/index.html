@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#socket-communication" class="md-skip">
+        <a href="#socket_commspy" class="md-skip">
           Skip to content
         </a>
       
@@ -443,6 +443,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    socket communication
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -454,6 +467,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#complete-code-with-inline-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Code with Inline Explanation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -523,6 +564,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#complete-code-with-inline-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Code with Inline Explanation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -537,7 +595,40 @@
 
 
 
-<h1 id="socket-communication">socket communication<a class="headerlink" href="#socket-communication" title="Permanent link">&para;</a></h1>
+<h1 id="socket_commspy">socket_comms.py<a class="headerlink" href="#socket_commspy" title="Permanent link">&para;</a></h1>
+<p>This script demonstrates basic socket communication between a sender and a 
+receiver using Python’s built-in <code>socket</code> module.</p>
+<hr />
+<h2 id="complete-code-with-inline-explanation">Complete Code with Inline Explanation<a class="headerlink" href="#complete-code-with-inline-explanation" title="Permanent link">&para;</a></h2>
+<p>```python</p>
+<h1 id="imports">=== IMPORTS ===<a class="headerlink" href="#imports" title="Permanent link">&para;</a></h1>
+<h1 id="import-socket-module-to-establish-tcpip-communication">Import socket module to establish TCP/IP communication<a class="headerlink" href="#import-socket-module-to-establish-tcpip-communication" title="Permanent link">&para;</a></h1>
+<p>import socket</p>
+<h1 id="server-setup">=== SERVER SETUP ===<a class="headerlink" href="#server-setup" title="Permanent link">&para;</a></h1>
+<h1 id="create-a-tcp-socket-object-for-the-receiver-server">Create a TCP socket object for the receiver (server)<a class="headerlink" href="#create-a-tcp-socket-object-for-the-receiver-server" title="Permanent link">&para;</a></h1>
+<p>receiver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</p>
+<h1 id="bind-the-socket-to-a-host-localhost-and-a-port-customizable">Bind the socket to a host (localhost) and a port (customizable)<a class="headerlink" href="#bind-the-socket-to-a-host-localhost-and-a-port-customizable" title="Permanent link">&para;</a></h1>
+<p>receiver_socket.bind(("localhost", 9999))</p>
+<h1 id="listen-for-incoming-client-connections-backlog-of-1">Listen for incoming client connections (backlog of 1)<a class="headerlink" href="#listen-for-incoming-client-connections-backlog-of-1" title="Permanent link">&para;</a></h1>
+<p>receiver_socket.listen(1)
+print("Receiver is listening on port 9999...")</p>
+<h1 id="connection-establishment">=== CONNECTION ESTABLISHMENT ===<a class="headerlink" href="#connection-establishment" title="Permanent link">&para;</a></h1>
+<h1 id="accept-an-incoming-connection-and-get-the-client-socket-and-address">Accept an incoming connection and get the client socket and address<a class="headerlink" href="#accept-an-incoming-connection-and-get-the-client-socket-and-address" title="Permanent link">&para;</a></h1>
+<p>client_socket, addr = receiver_socket.accept()
+print(f"Connection established with {addr}")</p>
+<h1 id="data-receiving-loop">=== DATA RECEIVING LOOP ===<a class="headerlink" href="#data-receiving-loop" title="Permanent link">&para;</a></h1>
+<h1 id="continuously-receive-messages-until-exit-is-received">Continuously receive messages until "exit" is received<a class="headerlink" href="#continuously-receive-messages-until-exit-is-received" title="Permanent link">&para;</a></h1>
+<p>while True:
+    data = client_socket.recv(1024).decode("utf-8")  # Receive up to 1024 
+bytes and decode
+    if data == "exit":
+        print("Exiting socket server.")
+        break
+    print("Received:", data)</p>
+<h1 id="cleanup">=== CLEANUP ===<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h1>
+<h1 id="close-the-client-and-server-sockets">Close the client and server sockets<a class="headerlink" href="#close-the-client-and-server-sockets" title="Permanent link">&para;</a></h1>
+<p>client_socket.close()
+receiver_socket.close()</p>
 
 
 
