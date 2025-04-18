@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setupdaqpy" class="md-skip">
+        <a href="#script-description" class="md-skip">
           Skip to content
         </a>
       
@@ -396,8 +396,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    setupDAQ.py
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -410,6 +421,149 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#script-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setupdaqpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      setupDAQ.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#it-defines-which-channels-to-use-the-timing-of-the-acquisition" class="md-nav__link">
+    <span class="md-ellipsis">
+      It defines which channels to use, the timing of the acquisition,
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#and-how-the-daq-system-starts-and-stops" class="md-nav__link">
+    <span class="md-ellipsis">
+      and how the DAQ system starts and stops.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-taskread" class="md-nav__link">
+    <span class="md-ellipsis">
+      data = task.read()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      process(data)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-ai0-channel-ready-on-dev1" class="md-nav__link">
+    <span class="md-ellipsis">
+      - AI0 channel ready on Dev1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-sampling-at-1000-hz-continuously" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Sampling at 1000 Hz continuously
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-task-can-be-integrated-in-any-looplogging-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Task can be integrated in any loop/logging system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-quick-daq-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Quick DAQ initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-avoids-redundant-setup-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Avoids redundant setup code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-clean-separation-of-setup-vs-acquisition-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Clean separation of setup vs. acquisition logic
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -520,8 +674,140 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#script-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setupdaqpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      setupDAQ.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#it-defines-which-channels-to-use-the-timing-of-the-acquisition" class="md-nav__link">
+    <span class="md-ellipsis">
+      It defines which channels to use, the timing of the acquisition,
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#and-how-the-daq-system-starts-and-stops" class="md-nav__link">
+    <span class="md-ellipsis">
+      and how the DAQ system starts and stops.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-taskread" class="md-nav__link">
+    <span class="md-ellipsis">
+      data = task.read()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      process(data)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-ai0-channel-ready-on-dev1" class="md-nav__link">
+    <span class="md-ellipsis">
+      - AI0 channel ready on Dev1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-sampling-at-1000-hz-continuously" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Sampling at 1000 Hz continuously
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-task-can-be-integrated-in-any-looplogging-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Task can be integrated in any loop/logging system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-quick-daq-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Quick DAQ initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-avoids-redundant-setup-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Avoids redundant setup code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-clean-separation-of-setup-vs-acquisition-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Clean separation of setup vs. acquisition logic
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -537,133 +823,78 @@
 
 
 
-<h1 id="setupdaqpy">setupDAQ.py<a class="headerlink" href="#setupdaqpy" title="Permanent link">&para;</a></h1>
+<p>k# setupDAQ.py</p>
+<hr />
+<h2 id="script-description">Script Description<a class="headerlink" href="#script-description" title="Permanent link">&para;</a></h2>
 <p>```python</p>
-<h1 id="setupdaqpy_1">setupDAQ.py<a class="headerlink" href="#setupdaqpy_1" title="Permanent link">&para;</a></h1>
+<h1 id="setupdaqpy">setupDAQ.py<a class="headerlink" href="#setupdaqpy" title="Permanent link">&para;</a></h1>
 <h1 id="this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in">This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in<a class="headerlink" href="#this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in" title="Permanent link">&para;</a></h1>
 <p>Python.</p>
 <h1 id="it-defines-which-channels-to-use-the-timing-of-the-acquisition">It defines which channels to use, the timing of the acquisition,<a class="headerlink" href="#it-defines-which-channels-to-use-the-timing-of-the-acquisition" title="Permanent link">&para;</a></h1>
 <h1 id="and-how-the-daq-system-starts-and-stops">and how the DAQ system starts and stops.<a class="headerlink" href="#and-how-the-daq-system-starts-and-stops" title="Permanent link">&para;</a></h1>
 <p>Setup
-python
-Copy
-Edit
-import nidaqmx  # Import the NI-DAQmx Python library.</p>
-<p>task = nidaqmx.Task()  # Create a new task object to manage all DAQ 
-operations.
-Channel Configuration
-python
-Copy
-Edit
-task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
-max_val=10.0)  # Add AI0 channel with ±10V input range.
-Clock and Sampling Rate
-python
-Copy
-Edit
-task.timing.cfg_samp_clk_timing(        # Configure the sample clock 
-timing.
-    rate=1000,                          # Set sampling rate to 1000 
-samples/sec.
-    sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS  # Use 
-continuous acquisition mode.
-)
-Task Execution
-python
-Copy
-Edit
-task.start()  # Start the task to begin data acquisition.
-python
-Copy
-Edit</p>
-<h1 id="insert-acquisition-logic-here">Insert acquisition logic here<a class="headerlink" href="#insert-acquisition-logic-here" title="Permanent link">&para;</a></h1>
-<h1 id="example-read-data-from-buffer-process-or-log-to-file">Example: Read data from buffer, process or log to file.<a class="headerlink" href="#example-read-data-from-buffer-process-or-log-to-file" title="Permanent link">&para;</a></h1>
+Import the NI-DAQmx Python library.</p>
 <p>python
 Copy
 Edit
-task.stop()  # Stop the task after acquisition is complete.
-python
+import nidaqmx
+Create a new task object to manage all DAQ operations.</p>
+<p>python
 Copy
 Edit
-task.close()  # Release the task and free system resources.
+task = nidaqmx.Task()
+Channel Configuration
+Add AI0 channel on device Dev1 with ±10V input range.</p>
+<p>python
+Copy
+Edit
+task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
+max_val=10.0)
+Clock and Sampling Rate
+Configure the sample clock for 1000 samples per second, continuous mode.</p>
+<p>python
+Copy
+Edit
+task.timing.cfg_samp_clk_timing(
+    rate=1000,
+    sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS
+)
+Task Execution
+Start the task to begin acquisition.</p>
+<p>python
+Copy
+Edit
+task.start()
+Insert acquisition logic here, e.g., read buffer or log data.</p>
+<p>python
+Copy
+Edit</p>
+<h1 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h1>
+<h1 id="data-taskread">data = task.read()<a class="headerlink" href="#data-taskread" title="Permanent link">&para;</a></h1>
+<h1 id="processdata">process(data)<a class="headerlink" href="#processdata" title="Permanent link">&para;</a></h1>
+<p>Stop and close the task to release system resources.</p>
+<p>python
+Copy
+Edit
+task.stop()
+task.close()
 Output Summary
 python
 Copy
 Edit</p>
-<h1 id="-analog-input-channel-ai0-is-configured-for-10v">- Analog input channel AI0 is configured for ±10V.<a class="headerlink" href="#-analog-input-channel-ai0-is-configured-for-10v" title="Permanent link">&para;</a></h1>
-<h1 id="-sampling-rate-is-set-to-1000-hz-in-continuous-mode">- Sampling rate is set to 1000 Hz in continuous mode.<a class="headerlink" href="#-sampling-rate-is-set-to-1000-hz-in-continuous-mode" title="Permanent link">&para;</a></h1>
-<h1 id="-task-can-now-be-integrated-into-any-acquisition-or-logging-loop">- Task can now be integrated into any acquisition or logging loop.<a class="headerlink" href="#-task-can-now-be-integrated-into-any-acquisition-or-logging-loop" title="Permanent link">&para;</a></h1>
+<h1 id="-ai0-channel-ready-on-dev1">- AI0 channel ready on Dev1<a class="headerlink" href="#-ai0-channel-ready-on-dev1" title="Permanent link">&para;</a></h1>
+<h1 id="-sampling-at-1000-hz-continuously">- Sampling at 1000 Hz continuously<a class="headerlink" href="#-sampling-at-1000-hz-continuously" title="Permanent link">&para;</a></h1>
+<h1 id="-task-can-be-integrated-in-any-looplogging-system">- Task can be integrated in any loop/logging system<a class="headerlink" href="#-task-can-be-integrated-in-any-looplogging-system" title="Permanent link">&para;</a></h1>
 <p>Why Use This Script?
 python
 Copy
 Edit</p>
-<h1 id="-reusable-and-modular-daq-setup">- Reusable and modular DAQ setup<a class="headerlink" href="#-reusable-and-modular-daq-setup" title="Permanent link">&para;</a></h1>
-<h1 id="-reduces-boilerplate-code-in-projects">- Reduces boilerplate code in projects<a class="headerlink" href="#-reduces-boilerplate-code-in-projects" title="Permanent link">&para;</a></h1>
-<h1 id="-clean-separation-of-setup-and-runtime-logic">- Clean separation of setup and runtime logic<a class="headerlink" href="#-clean-separation-of-setup-and-runtime-logic" title="Permanent link">&para;</a></h1>
-<h1 id="setupdaqpy_2">setupDAQ.py<a class="headerlink" href="#setupdaqpy_2" title="Permanent link">&para;</a></h1>
-<p>```python</p>
-<h1 id="setupdaqpy_3">setupDAQ.py<a class="headerlink" href="#setupdaqpy_3" title="Permanent link">&para;</a></h1>
-<h1 id="this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in_1">This script sets up a Data Acquisition (DAQ) task using NI-DAQmx in<a class="headerlink" href="#this-script-sets-up-a-data-acquisition-daq-task-using-ni-daqmx-in_1" title="Permanent link">&para;</a></h1>
-<p>Python.</p>
-<h1 id="it-defines-which-channels-to-use-the-timing-of-the-acquisition_1">It defines which channels to use, the timing of the acquisition,<a class="headerlink" href="#it-defines-which-channels-to-use-the-timing-of-the-acquisition_1" title="Permanent link">&para;</a></h1>
-<h1 id="and-how-the-daq-system-starts-and-stops_1">and how the DAQ system starts and stops.<a class="headerlink" href="#and-how-the-daq-system-starts-and-stops_1" title="Permanent link">&para;</a></h1>
-<p>Setup
-python
-Copy
-Edit
-import nidaqmx  # Import the NI-DAQmx Python library.</p>
-<p>task = nidaqmx.Task()  # Create a new task object to manage all DAQ 
-operations.
-Channel Configuration
-python
-Copy
-Edit
-task.ai_channels.add_ai_voltage_chan("Dev1/ai0", min_val=-10.0, 
-max_val=10.0)  # Add AI0 channel with ±10V input range.
-Clock and Sampling Rate
-python
-Copy
-Edit
-task.timing.cfg_samp_clk_timing(        # Configure the sample clock 
-timing.
-    rate=1000,                          # Set sampling rate to 1000 
-samples/sec.
-    sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS  # Use 
-continuous acquisition mode.
-)
-Task Execution
-python
-Copy
-Edit
-task.start()  # Start the task to begin data acquisition.
-python
+<h1 id="-quick-daq-initialization">- Quick DAQ initialization<a class="headerlink" href="#-quick-daq-initialization" title="Permanent link">&para;</a></h1>
+<h1 id="-avoids-redundant-setup-code">- Avoids redundant setup code<a class="headerlink" href="#-avoids-redundant-setup-code" title="Permanent link">&para;</a></h1>
+<h1 id="-clean-separation-of-setup-vs-acquisition-logic">- Clean separation of setup vs. acquisition logic<a class="headerlink" href="#-clean-separation-of-setup-vs-acquisition-logic" title="Permanent link">&para;</a></h1>
+<p>yaml
 Copy
 Edit</p>
-<h1 id="insert-acquisition-logic-here_1">Insert acquisition logic here<a class="headerlink" href="#insert-acquisition-logic-here_1" title="Permanent link">&para;</a></h1>
-<h1 id="example-read-data-from-buffer-process-or-log-to-file_1">Example: Read data from buffer, process or log to file.<a class="headerlink" href="#example-read-data-from-buffer-process-or-log-to-file_1" title="Permanent link">&para;</a></h1>
-<p>python
-Copy
-Edit
-task.stop()  # Stop the task after acquisition is complete.
-python
-Copy
-Edit
-task.close()  # Release the task and free system resources.
-Output Summary
-python
-Copy
-Edit</p>
-<h1 id="-analog-input-channel-ai0-is-configured-for-10v_1">- Analog input channel AI0 is configured for ±10V.<a class="headerlink" href="#-analog-input-channel-ai0-is-configured-for-10v_1" title="Permanent link">&para;</a></h1>
-<h1 id="-sampling-rate-is-set-to-1000-hz-in-continuous-mode_1">- Sampling rate is set to 1000 Hz in continuous mode.<a class="headerlink" href="#-sampling-rate-is-set-to-1000-hz-in-continuous-mode_1" title="Permanent link">&para;</a></h1>
-<h1 id="-task-can-now-be-integrated-into-any-acquisition-or-logging-loop_1">- Task can now be integrated into any acquisition or logging loop.<a class="headerlink" href="#-task-can-now-be-integrated-into-any-acquisition-or-logging-loop_1" title="Permanent link">&para;</a></h1>
-<p>Why Use This Script?
-python
-Copy
-Edit</p>
-<h1 id="-reusable-and-modular-daq-setup_1">- Reusable and modular DAQ setup<a class="headerlink" href="#-reusable-and-modular-daq-setup_1" title="Permanent link">&para;</a></h1>
-<h1 id="-reduces-boilerplate-code-in-projects_1">- Reduces boilerplate code in projects<a class="headerlink" href="#-reduces-boilerplate-code-in-projects_1" title="Permanent link">&para;</a></h1>
-<h1 id="-clean-separation-of-setup-and-runtime-logic_1">- Clean separation of setup and runtime logic<a class="headerlink" href="#-clean-separation-of-setup-and-runtime-logic_1" title="Permanent link">&para;</a></h1>
-<h1 id="-ideal-for-lab-automation-real-time-data-and-testbeds">- Ideal for lab automation, real-time data, and testbeds<a class="headerlink" href="#-ideal-for-lab-automation-real-time-data-and-testbeds" title="Permanent link">&para;</a></h1>
 
 
 
