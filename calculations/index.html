@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#calculations" class="md-skip">
+        <a href="#calculationspy" class="md-skip">
           Skip to content
         </a>
       
@@ -465,6 +465,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    calculations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -476,6 +489,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-data-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Data Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-statistical-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Statistical Calculations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-derived-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal-Derived Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Results
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -523,6 +600,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-data-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Data Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-statistical-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Statistical Calculations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-derived-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal-Derived Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Results
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -537,7 +667,89 @@
 
 
 
-<h1 id="calculations">calculations<a class="headerlink" href="#calculations" title="Permanent link">&para;</a></h1>
+<h1 id="calculationspy">calculations.py<a class="headerlink" href="#calculationspy" title="Permanent link">&para;</a></h1>
+<hr />
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i># calculations.py</i></span><br>
+  <span style="color:#1565c0"><i># This script performs a set of 
+engineering or signal-processing-related calculations using built-in math 
+operations or NumPy.</i></span>
+</div>
+
+<p><strong>This script performs a set of engineering or signal-processing-related 
+calculations using built-in math operations or NumPy.</strong></p>
+<hr />
+<h2 id="imports">Imports<a class="headerlink" href="#imports" title="Permanent link">&para;</a></h2>
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>import numpy as np</i></span><br>
+  <span style="color:#1565c0"><i>import math</i></span>
+</div>
+
+<p><strong>Import numerical libraries for array and math operations.</strong></p>
+<hr />
+<h2 id="sample-data-setup">Sample Data Setup<a class="headerlink" href="#sample-data-setup" title="Permanent link">&para;</a></h2>
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>data = np.array([1.2, 2.5, 3.1, 2.9, 1.8, 
+2.2, 3.3, 2.7])</i></span>
+</div>
+
+<p><strong>Define a sample data array (e.g., voltage readings or signal samples).</strong></p>
+<hr />
+<h2 id="basic-statistical-calculations">Basic Statistical Calculations<a class="headerlink" href="#basic-statistical-calculations" title="Permanent link">&para;</a></h2>
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>mean_val = np.mean(data)</i></span>
+</div>
+
+<p><strong>Calculate the mean (average) of the data.</strong></p>
+<hr />
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>std_dev = np.std(data)</i></span>
+</div>
+
+<p><strong>Calculate the standard deviation of the data.</strong></p>
+<hr />
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>max_val = np.max(data)</i></span><br>
+  <span style="color:#1565c0"><i>min_val = np.min(data)</i></span>
+</div>
+
+<p><strong>Calculate the maximum and minimum values in the dataset.</strong></p>
+<hr />
+<h2 id="signal-derived-metrics">Signal-Derived Metrics<a class="headerlink" href="#signal-derived-metrics" title="Permanent link">&para;</a></h2>
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>peak_to_peak = max_val - 
+min_val</i></span>
+</div>
+
+<p><strong>Calculate the peak-to-peak value (range) of the signal.</strong></p>
+<hr />
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>rms = 
+np.sqrt(np.mean(np.square(data)))</i></span>
+</div>
+
+<p><strong>Calculate RMS (Root Mean Square) value — useful for AC signal energy.</strong></p>
+<hr />
+<h2 id="display-results">Display Results<a class="headerlink" href="#display-results" title="Permanent link">&para;</a></h2>
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>print("Mean:", mean_val)</i></span><br>
+  <span style="color:#1565c0"><i>print("Standard Deviation:", 
+std_dev)</i></span><br>
+  <span style="color:#1565c0"><i>print("Peak-to-Peak:", 
+peak_to_peak)</i></span><br>
+  <span style="color:#1565c0"><i>print("RMS:", rms)</i></span>
+</div>
+
+<p><strong>Print out all calculated results to the terminal.</strong></p>
 
 
 

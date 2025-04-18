@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hardware-classes" class="md-skip">
+        <a href="#hardwarepy" class="md-skip">
           Skip to content
         </a>
       
@@ -485,6 +485,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    hardware classes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -496,6 +509,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-class-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Class Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -521,6 +571,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-class-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Class Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -535,7 +611,92 @@
 
 
 
-<h1 id="hardware-classes">hardware classes<a class="headerlink" href="#hardware-classes" title="Permanent link">&para;</a></h1>
+<h1 id="hardwarepy">hardware.py<a class="headerlink" href="#hardwarepy" title="Permanent link">&para;</a></h1>
+<hr />
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i># hardware.py</i></span><br>
+  <span style="color:#1565c0"><i># This module defines object-oriented 
+hardware abstraction for device configuration and control.</i></span>
+</div>
+
+<p><strong>This module defines object-oriented hardware abstraction for device 
+configuration and control.</strong></p>
+<hr />
+<h2 id="hardware-class-definition">Hardware Class Definition<a class="headerlink" href="#hardware-class-definition" title="Permanent link">&para;</a></h2>
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>class Sensor:</i></span><br>
+  <span style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;def 
+__init__(self, name, channel, range_min=-10.0, 
+range_max=10.0):</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name 
+= name</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.channel 
+= channel</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.range_min 
+= range_min</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.range_max 
+= range_max</i></span>
+</div>
+
+<p><strong>Define a class representing a generic sensor or DAQ-connected device 
+with basic attributes.</strong></p>
+<hr />
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;def 
+configure_channel(self, task):</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;task.ai_channels.add_ai_voltage_chan(</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.channel,</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_val=self.range_min,</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_val=self.range_max</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</i></span>
+</div>
+
+<p><strong>Configure this sensor’s analog input channel into a DAQ task.</strong></p>
+<hr />
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;def 
+__str__(self):</i></span><br>
+  <span 
+style="color:#1565c0"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 
+f"{self.name} on {self.channel} [{self.range_min}V to 
+{self.range_max}V]"</i></span>
+</div>
+
+<p><strong>Return a string summary of the sensor object when printed.</strong></p>
+<hr />
+<h2 id="example-usage">Example Usage<a class="headerlink" href="#example-usage" title="Permanent link">&para;</a></h2>
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i>temperature_sensor = 
+Sensor("Temperature", "Dev1/ai0")</i></span><br>
+  <span style="color:#1565c0"><i>pressure_sensor = Sensor("Pressure", 
+"Dev1/ai1", -5.0, 5.0)</i></span>
+</div>
+
+<p><strong>Create sensor objects for different analog input channels.</strong></p>
+<hr />
+<div style="background:#f5f5f5; padding:12px; border-radius:6px; 
+font-family:monospace">
+  <span style="color:#1565c0"><i># for sensor in [temperature_sensor, 
+pressure_sensor]:</i></span><br>
+  <span style="color:#1565c0"><i># 
+&nbsp;&nbsp;&nbsp;&nbsp;sensor.configure_channel(task)</i></span>
+</div>
+
+<p><strong>Example usage loop to add all configured sensors to a DAQ task.</strong></p>
 
 
 
