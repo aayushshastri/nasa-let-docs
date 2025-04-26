@@ -627,7 +627,7 @@ extensibility.</li>
 <h2 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h2>
 <p>The system architecture consists of four primary modules:</p>
 <ol>
-<li><strong>DAQ Acquisition Module</strong> (<code>readall.py</code>, <code>setupDAQ.py</code>):</li>
+<li><strong>DAQ Acquisition Module</strong> (<code>readall.py</code>, <code>setupDAQ.py</code>)</li>
 <li>Handles multi-channel analog input configuration, timing, and data 
 acquisition.</li>
 <li>Supports continuous sampling at user-defined rates.</li>
@@ -635,7 +635,7 @@ acquisition.</li>
 <p>Saves structured output (CSV files) for analysis.</p>
 </li>
 <li>
-<p><strong>Instrument Communication Module</strong> (<code>pyvisaTest.py</code>):</p>
+<p><strong>Instrument Communication Module</strong> (<code>pyvisaTest.py</code>)</p>
 </li>
 <li>Controls external lab equipment via PyVISA.</li>
 <li>
@@ -643,7 +643,7 @@ acquisition.</li>
 programmatically.</p>
 </li>
 <li>
-<p><strong>Socket Communication Layer</strong> (<code>socket_comms.py</code>):</p>
+<p><strong>Socket Communication Layer</strong> (<code>socket_comms.py</code>)</p>
 </li>
 <li>Enables real-time communication between the DAQ subsystem and 
 external GUIs or processing applications.</li>
@@ -651,15 +651,17 @@ external GUIs or processing applications.</li>
 <p>Allows flexible deployment across distributed systems.</p>
 </li>
 <li>
-<p><strong>Data Processing and Utilities</strong> (<code>calculations.py</code>, <code>hardware.py</code>):</p>
+<p><strong>Data Processing and Utilities</strong> (<code>calculations.py</code>, <code>hardware.py</code>)</p>
 </li>
 <li>Provides statistical analysis functions (e.g., RMS, mean, standard 
 deviation).</li>
 <li>Defines object-oriented sensor abstraction for scalable channel 
 configuration.</li>
 </ol>
+<blockquote>
 <p>The system is highly modular, allowing new sensors, instruments, or 
 communication endpoints to be integrated with minimal codebase disruption.</p>
+</blockquote>
 <hr />
 <h2 id="hardware-and-interfaces">Hardware and Interfaces<a class="headerlink" href="#hardware-and-interfaces" title="Permanent link">&para;</a></h2>
 <ul>
