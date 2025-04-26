@@ -320,6 +320,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-daq-acquisition-module-readallpy-setupdaqpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. DAQ Acquisition Module (readall.py, setupDAQ.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-instrument-communication-module-pyvisatestpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Instrument Communication Module (pyvisaTest.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-socket-communication-layer-socket_commspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Socket Communication Layer (socket_comms.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-data-processing-and-utilities-calculationspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Data Processing and Utilities (calculations.py,
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -477,6 +519,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-daq-acquisition-module-readallpy-setupdaqpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. DAQ Acquisition Module (readall.py, setupDAQ.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-instrument-communication-module-pyvisatestpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Instrument Communication Module (pyvisaTest.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-socket-communication-layer-socket_commspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Socket Communication Layer (socket_comms.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-data-processing-and-utilities-calculationspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Data Processing and Utilities (calculations.py,
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -626,41 +710,35 @@ extensibility.</li>
 <hr />
 <h2 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h2>
 <p>The system architecture consists of four primary modules:</p>
-<ol>
-<li><strong>DAQ Acquisition Module</strong> (<code>readall.py</code>, <code>setupDAQ.py</code>)</li>
+<h3 id="1-daq-acquisition-module-readallpy-setupdaqpy">1. <strong>DAQ Acquisition Module</strong> (<code>readall.py</code>, <code>setupDAQ.py</code>)<a class="headerlink" href="#1-daq-acquisition-module-readallpy-setupdaqpy" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Handles multi-channel analog input configuration, timing, and data 
 acquisition.</li>
 <li>Supports continuous sampling at user-defined rates.</li>
-<li>
-<p>Saves structured output (CSV files) for analysis.</p>
-</li>
-<li>
-<p><strong>Instrument Communication Module</strong> (<code>pyvisaTest.py</code>)</p>
-</li>
+<li>Saves structured output (CSV files) for analysis.</li>
+</ul>
+<h3 id="2-instrument-communication-module-pyvisatestpy">2. <strong>Instrument Communication Module</strong> (<code>pyvisaTest.py</code>)<a class="headerlink" href="#2-instrument-communication-module-pyvisatestpy" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Controls external lab equipment via PyVISA.</li>
-<li>
-<p>Sends SCPI commands, reads responses, and configures devices 
-programmatically.</p>
-</li>
-<li>
-<p><strong>Socket Communication Layer</strong> (<code>socket_comms.py</code>)</p>
-</li>
-<li>Enables real-time communication between the DAQ subsystem and 
-external GUIs or processing applications.</li>
-<li>
-<p>Allows flexible deployment across distributed systems.</p>
-</li>
-<li>
-<p><strong>Data Processing and Utilities</strong> (<code>calculations.py</code>, <code>hardware.py</code>)</p>
-</li>
-<li>Provides statistical analysis functions (e.g., RMS, mean, standard 
-deviation).</li>
-<li>Defines object-oriented sensor abstraction for scalable channel 
-configuration.</li>
-</ol>
+<li>Sends SCPI commands, reads responses, and configures devices 
+programmatically.</li>
+</ul>
+<h3 id="3-socket-communication-layer-socket_commspy">3. <strong>Socket Communication Layer</strong> (<code>socket_comms.py</code>)<a class="headerlink" href="#3-socket-communication-layer-socket_commspy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enables real-time communication between the DAQ subsystem and external 
+GUIs or processing applications.</li>
+<li>Allows flexible deployment across distributed systems.</li>
+</ul>
+<h3 id="4-data-processing-and-utilities-calculationspy">4. <strong>Data Processing and Utilities</strong> (<code>calculations.py</code>,<a class="headerlink" href="#4-data-processing-and-utilities-calculationspy" title="Permanent link">&para;</a></h3>
+<p><code>hardware.py</code>)
+- Provides statistical analysis functions (e.g., RMS, mean, standard 
+deviation).
+- Defines object-oriented sensor abstraction for scalable channel 
+configuration.</p>
 <blockquote>
-<p>The system is highly modular, allowing new sensors, instruments, or 
-communication endpoints to be integrated with minimal codebase disruption.</p>
+<p><strong>Note:</strong> The system is highly modular, allowing new sensors, 
+instruments, or communication endpoints to be integrated with minimal 
+codebase disruption.</p>
 </blockquote>
 <hr />
 <h2 id="hardware-and-interfaces">Hardware and Interfaces<a class="headerlink" href="#hardware-and-interfaces" title="Permanent link">&para;</a></h2>
